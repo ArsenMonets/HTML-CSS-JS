@@ -1,0 +1,83 @@
+<head>
+  <title> The Earth and the Moon </title>
+  <style>
+    body {
+    background-image: url(background.jpg); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   }
+   #earth {
+   width: 5%;
+   height: 10%;
+   background-color: red;
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   margin: -25px 0 0 -25px; 
+   }
+   #moon {
+   width: 1.25%;
+   height: 2.5%;
+   background-color: red;
+   position: absolute;
+   top: 35%;
+   left: 52%;
+   margin: -25px 0 0 -25px; 
+   }
+   button {
+   margin: 0 auto;
+   display: block;
+   font-size: 2vh;
+   }
+   h1, h2 {
+     text-align: center;
+     color: white;
+   }
+   h1 {
+     font-size: 5vh;
+   }
+   h2 {
+     font-size: 3vh;
+   }
+   
+   
+ </style>
+ <script>
+    async function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function runSimulation() {
+    var myElement = document.getElementById("moon");
+    for (;;) {
+    myElement.style.top = "62%";
+    myElement.style.left = "25%";
+    await delay(2000);
+    myElement.style.top = "85%";
+    myElement.style.left = "52%";
+    await delay(2000);
+    myElement.style.top = "62%";
+    myElement.style.left = "75%";
+    await delay(2000);
+    myElement.style.top = "35%";
+    myElement.style.left = "52%";
+    await delay(2000);
+    }
+    }
+ </script>
+</head>
+
+<body>
+    <h1> The Earth and The Moon </h1>
+    <h2> If you press the button, you can observe how the Moon moves around the Earth </h2>
+    <button onclick="runSimulation()"> Start simulation </button>
+    <img src="earth.png", id="earth"/>
+    <img src="moon.jpg", id="moon"/>
+</body>
+    
+</html>
